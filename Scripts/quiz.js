@@ -295,7 +295,7 @@ btnsubmit.addEventListener("click", function () {
       qu3option4.classList.contains("selected") == true)
   ) {
     const result = findScore();
-    alert("Your Score is " + result);
+    alert("Your Score is " + result + " out of 3 !");
 
     // Store Scores in LocalStorage
     let users = JSON.parse(localStorage.getItem("users")) || [];
