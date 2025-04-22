@@ -82,3 +82,19 @@ button {
     /* visibility: hidden; */
     display: none;
 }
+
+
+/* ################################   Make Responsive Web Design-Media Queries   ################################*/
+
+@media (max-width: 830px){
+    tr, td {
+      display: block;
+      width: 100%;
+    }
+    input {
+      width: 50%;
+    }
+    button {
+      font-size: 12px;
+    }
+  }
