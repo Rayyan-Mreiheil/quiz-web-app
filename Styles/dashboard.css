@@ -28,3 +28,11 @@ main {
   padding: 50px;
   margin: 50px auto;
 }
+
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: white;
+    color: rgb(1, 1, 63);
+  }
