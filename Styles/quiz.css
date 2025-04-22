@@ -1,90 +1,104 @@
-
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    text-align: center;
-    padding-top: 100px; /* Push down for header */
-    padding-bottom: 100px; /* Push up for footer */
-    background-color: blueviolet;
-    color: rgb(1, 1, 63);
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: center;
+  padding-top: 100px; /* Push down for header */
+  padding-bottom: 100px; /* Push up for footer */
+  background-color: blueviolet;
+  color: rgb(1, 1, 63);
+  font-size: 20px;
+}
+
+header {
+  background-color: rgb(1, 1, 63);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 1000;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+  border-bottom: 10px double blueviolet;
+}
+
+footer {
+  background-color: rgb(1, 1, 63);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  border-top: 10px double blueviolet;
+}
+
+main {
+  border-radius: 100px;
+  padding: 40px;
+  margin: auto;
+}
+
+.flex {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.flex button {
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+  border: 3px solid rgb(1, 1, 63);
+  width: 300px;
+}
+
+.qu-container {
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 50px auto;
+  width: 50%;
+  border-radius: 50px;
+  border: 5px double rgb(1, 1, 63);
+  padding: 20px 50px;
+}
+
+.submit {
+  margin-top: 30px;
+  padding: 5px 30px;
+  border: 5px double rgb(1, 1, 63);
+  border-radius: 20px;
+  background-color: white;
+  color: blueviolet;
+  font-weight: bolder;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  color: red;
+}
+
+.selected {
+  background-color: #4caf50; /* Green background for selected option */
+  color: white; /* White text */
+}
+
+/* ################################   Make Responsive Web Design-Media Queries   ################################*/
+
+@media (max-width: 830px) {
+  *,
+  .submit {
     font-size: 20px;
   }
-
-  header {
-    background-color: rgb(1, 1, 63);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    z-index: 1000;
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    border-bottom: 10px double blueviolet;
+  button {
+    font-size: 15px;
   }
-
-  footer {
-    background-color: rgb(1, 1, 63);
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 80px;
-    border-top-left-radius: 50%;
-    border-top-right-radius: 50%;
-    border-top: 10px double blueviolet;
-  }
-
-  main {
-    border-radius: 100px;
-    padding: 40px;
-    margin: auto;
-  }
-
-  .flex {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-evenly;
-    align-content: center;
-  }
-
   .flex button {
-    padding: 5px 10px;
-    margin: 5px;
-    border-radius: 5px;
-    border: 3px solid rgb(1, 1, 63);
-    width: 300px;
+    width: 130px;
   }
-
-  .qu-container {
-    background-color: rgba(255, 255, 255, 0.6);
-    margin: 50px auto;
-    width: 50%;
-    border-radius: 50px;
-    border: 5px double rgb(1, 1, 63);
-    padding: 20px 50px;
-  }
-
-  .submit {
-    margin-top: 30px;
-    padding: 5px 30px;
-    border: 5px double rgb(1, 1, 63);
-    border-radius: 20px;
-    background-color: white;
-    color: blueviolet;
-    font-weight: bolder;
-    font-size: 30px;
-    cursor: pointer;
-  }
-  
-  .submit:hover {
-    color: red;
-  }
-
-  .selected {
-    background-color: #4CAF50; /* Green background for selected option */
-    color: white; /* White text */
-  }
+}
