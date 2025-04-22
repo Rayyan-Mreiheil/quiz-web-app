@@ -83,3 +83,8 @@
   .submit:hover {
     color: red;
   }
+
+  .selected {
+    background-color: #4CAF50; /* Green background for selected option */
+    color: white; /* White text */
+  }
