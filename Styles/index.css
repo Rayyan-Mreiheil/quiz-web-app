@@ -77,3 +77,8 @@ button {
     font-size: 30px;
     cursor: pointer;
 }
+
+.form2-signup {
+    /* visibility: hidden; */
+    display: none;
+}
