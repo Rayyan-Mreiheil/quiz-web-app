@@ -78,7 +78,7 @@ document
   });
 
 
-
+  
 // ==== Handle Login Form Submission ====
 
 document.getElementById("form1-login").addEventListener("submit", function (e) {
@@ -103,5 +103,8 @@ document.getElementById("form1-login").addEventListener("submit", function (e) {
     return;
   }
 
-  
+  // Save current user info
+  localStorage.setItem("currentUser", JSON.stringify(foundUser));
+
+
 });
