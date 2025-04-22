@@ -21,10 +21,56 @@ let users = JSON.parse(localStorage.getItem("users"));
 
 // Check if admin is already there
 if (!users.some((user) => user.email === defaultAdmin.email)) {
-    // Checks if any user in the users array has the same email as the defaultAdmin
-    users.push(defaultAdmin);
-    localStorage.setItem("users", JSON.stringify(users));
-  }
-  // ### Testing ###
-  // console.log(users);
-  // localStorage.clear();
+  // Checks if any user in the users array has the same email as the defaultAdmin
+  users.push(defaultAdmin);
+  localStorage.setItem("users", JSON.stringify(users));
+}
+// ### Testing ###
+// console.log(users);
+// localStorage.clear();
+
+
+// ==== Handle Register Form Submission ====
+
+document.getElementById("form2-signup").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name-signup").value.trim();
+    const email = document.getElementById("email-signup").value.trim();
+    const password = document.getElementById("pass-signup").value.trim();
+
+    // Basic validation
+    if (email === "" || password === "" || name === "") {
+      alert("Please fill in all fields.");
+      return;
+    }
+
+    users = JSON.parse(localStorage.getItem("users"));
+
+    // Check if email already exists
+    const existingUser = users.find((user) => user.email === email);
+    if (existingUser) {
+      alert("This email is already registered.");
+      document.getElementById("name-signup").value = "";
+      document.getElementById("email-signup").value = "";
+      document.getElementById("pass-signup").value = "";
+      return;
+    }
+
+    // Add new user
+    const newUser = {
+      name: name,
+      email: email,
+      password: password,
+      scores: [],
+    };
+
+   
+
+    alert("Registration successful! You can now log in.");
+    document.getElementById("name-signup").value = "";
+    document.getElementById("email-signup").value = "";
+    document.getElementById("pass-signup").value = "";
+    // Redirect to login page
+    window.location.href = "index.html";
+  });
