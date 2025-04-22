@@ -274,3 +274,58 @@ function findScore() {
 
   return score;
 }
+
+
+
+////// Show the result And Add it to LocalStorage //////
+const btnsubmit = document.getElementById("submit");
+btnsubmit.addEventListener("click", function () {
+  if (
+    (qu1option1.classList.contains("selected") == true ||
+      qu1option2.classList.contains("selected") == true ||
+      qu1option3.classList.contains("selected") == true ||
+      qu1option4.classList.contains("selected") == true) &&
+    (qu2option1.classList.contains("selected") == true ||
+      qu2option2.classList.contains("selected") == true ||
+      qu2option3.classList.contains("selected") == true ||
+      qu2option4.classList.contains("selected") == true) &&
+    (qu3option1.classList.contains("selected") == true ||
+      qu3option2.classList.contains("selected") == true ||
+      qu3option3.classList.contains("selected") == true ||
+      qu3option4.classList.contains("selected") == true)
+  ) {
+    const result = findScore();
+    alert("Your Score is " + result);
+
+    // Store Scores in LocalStorage
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+    // Initialize scores if missing
+    if (!currentUser.scores) {
+      currentUser.scores = []; // initialize if missing
+    }
+
+    // Push the new score to currentUser's score array
+    currentUser.scores.push(result); // push the new score
+    localStorage.setItem("currentUser", JSON.stringify(currentUser)); // save it back
+
+    // Update the user score where the name matches currentUser.name
+    users = users.map((user) => {
+      if (user.name === currentUser.name) {
+        // Update the user's score here, you can add the result to an existing score or replace
+        user.scores.push(result); // Assuming you want to add to existing scores
+        return user; // Return the updated user
+      }
+      return user; // Keep other users unchanged
+    });
+
+    localStorage.setItem("users", JSON.stringify(users)); // Save updated users array
+
+    console.log(localStorage.getItem("users")); // Log users for debugging
+    deselectAllOptions(); // This will remove the 'selected' class from all options
+  } else {
+    alert("Please Answer All The Questions!");
+  }
+});
+
