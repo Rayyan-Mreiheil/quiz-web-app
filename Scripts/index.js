@@ -29,10 +29,11 @@ if (!users.some((user) => user.email === defaultAdmin.email)) {
 // console.log(users);
 // localStorage.clear();
 
-
 // ==== Handle Register Form Submission ====
 
-document.getElementById("form2-signup").addEventListener("submit", function (e) {
+document
+  .getElementById("form2-signup")
+  .addEventListener("submit", function (e) {
     e.preventDefault();
 
     const name = document.getElementById("name-signup").value.trim();
@@ -75,3 +76,32 @@ document.getElementById("form2-signup").addEventListener("submit", function (e) 
     // Redirect to login page
     window.location.href = "index.html";
   });
+
+
+
+// ==== Handle Login Form Submission ====
+
+document.getElementById("form1-login").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const email = document.getElementById("email-login").value.trim();
+  const password = document.getElementById("pass-login").value.trim();
+
+  if (!email || !password) {
+    alert("Please fill in all fields.");
+    return;
+  }
+
+  users = JSON.parse(localStorage.getItem("users")) || [];
+
+  const foundUser = users.find(
+    (user) => user.email === email && user.password === password
+  );
+
+  if (!foundUser) {
+    alert("Invalid email or password.");
+    return;
+  }
+
+  
+});
