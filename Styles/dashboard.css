@@ -9,3 +9,12 @@
     color: rgb(1, 1, 63);
     font-size: 18px;
   }
+
+  h1 {
+    color: blueviolet;
+  font-family: "Kaushan Script", cursive;
+  font-weight: 600;
+  font-style: normal;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
