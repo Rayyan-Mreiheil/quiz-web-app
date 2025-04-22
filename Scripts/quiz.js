@@ -215,3 +215,12 @@ buttons.forEach((button) => {
     selectOption(button); // Mark the clicked button as selected
   });
 });
+
+// Function to remove the 'selected' class from all options
+function deselectAllOptions() {
+    // Find all the options with the 'selected' class
+    const allSelectedButtons = document.querySelectorAll(".option.selected");
+  
+    // Loop through each selected button and remove the 'selected' class
+    allSelectedButtons.forEach((btn) => btn.classList.remove("selected"));
+  }
