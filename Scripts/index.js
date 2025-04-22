@@ -65,7 +65,8 @@ document.getElementById("form2-signup").addEventListener("submit", function (e) 
       scores: [],
     };
 
-   
+    users.push(newUser);
+    localStorage.setItem("users", JSON.stringify(users));
 
     alert("Registration successful! You can now log in.");
     document.getElementById("name-signup").value = "";
