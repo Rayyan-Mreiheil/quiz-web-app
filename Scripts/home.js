@@ -12,6 +12,7 @@ Array.from(btnStart).forEach((button) => {
     const clickedId = event.target.id; // or use this.id
     // Store clicked ID in localStorage
     localStorage.setItem("selectedbtnQu", clickedId);
-    
+    // Redirect to quiz page
+    window.location.href = "quiz.html";
   });
 });
