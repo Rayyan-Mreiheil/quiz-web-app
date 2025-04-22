@@ -49,3 +49,18 @@ table {
     color: white;
     font-size: 20px;
   }
+
+  
+/* ################################   Make Responsive Web Design-Media Queries   ################################*/
+
+@media (max-width: 830px){
+    *, tr, td, h1 {
+      font-size: 20px;
+    }
+    table {
+      width: 95%;
+    }
+    main {
+      width: 65%;
+    }
+  }
