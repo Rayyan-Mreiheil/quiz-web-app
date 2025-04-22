@@ -218,9 +218,59 @@ buttons.forEach((button) => {
 
 // Function to remove the 'selected' class from all options
 function deselectAllOptions() {
-    // Find all the options with the 'selected' class
-    const allSelectedButtons = document.querySelectorAll(".option.selected");
-  
-    // Loop through each selected button and remove the 'selected' class
-    allSelectedButtons.forEach((btn) => btn.classList.remove("selected"));
+  // Find all the options with the 'selected' class
+  const allSelectedButtons = document.querySelectorAll(".option.selected");
+
+  // Loop through each selected button and remove the 'selected' class
+  allSelectedButtons.forEach((btn) => btn.classList.remove("selected"));
+}
+
+// Calculate Score
+function findScore() {
+  let score = 0;
+  if (selectedbtnQu === "htmlbtn") {
+    const qu1Option3 = document.getElementById("qu1option3");
+    const qu2Option3 = document.getElementById("qu2option3");
+    const qu3Option4 = document.getElementById("qu3option4");
+
+    if (qu1Option3.classList.contains("selected")) {
+      score++;
+    }
+    if (qu2Option3.classList.contains("selected")) {
+      score++;
+    }
+    if (qu3Option4.classList.contains("selected")) {
+      score++;
+    }
+  } else if (selectedbtnQu === "cssbtn") {
+    const qu1option2 = document.getElementById("qu1option2");
+    const qu2option2 = document.getElementById("qu2option2");
+    const qu3option4 = document.getElementById("qu3option4");
+
+    if (qu1option2.classList.contains("selected")) {
+      score++;
+    }
+    if (qu2option2.classList.contains("selected")) {
+      score++;
+    }
+    if (qu3option4.classList.contains("selected")) {
+      score++;
+    }
+  } else {
+    const qu1option1 = document.getElementById("qu1option1");
+    const qu2option1 = document.getElementById("qu2option1");
+    const qu3option2 = document.getElementById("qu3option2");
+
+    if (qu1option1.classList.contains("selected")) {
+      score++;
+    }
+    if (qu2option1.classList.contains("selected")) {
+      score++;
+    }
+    if (qu3option2.classList.contains("selected")) {
+      score++;
+    }
   }
+
+  return score;
+}
