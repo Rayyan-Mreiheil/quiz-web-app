@@ -56,3 +56,10 @@ label {
 table {
     margin: auto;
 }
+
+.align-Left {
+    text-align: left;
+}
+.align-right{
+    text-align: right;
+}
