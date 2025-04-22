@@ -1,0 +1,14 @@
+
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    text-align: center;
+    padding-top: 100px; /* Push down for header */
+    padding-bottom: 100px; /* Push up for footer */
+    background-color: blueviolet;
+    color: rgb(1, 1, 63);
+    font-size: 20px;
+  }
