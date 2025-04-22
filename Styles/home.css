@@ -1,4 +1,16 @@
+
 * {
-  margin: 0;
-  padding: 0;
-}
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    background-image: url("../Images/homeImg.jpg");
+    background-size: cover; /* makes image cover the whole screen */
+    background-repeat: no-repeat;
+    background-position: top center;
+    text-align: center;
+    color: white;
+    font-size: 18px;
+    margin: 50px 0;
+  }
