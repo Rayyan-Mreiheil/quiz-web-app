@@ -106,5 +106,14 @@ document.getElementById("form1-login").addEventListener("submit", function (e) {
   // Save current user info
   localStorage.setItem("currentUser", JSON.stringify(foundUser));
 
-
+  // Check if admin
+  if (foundUser.email === "admin@quiz.com") {
+    document.getElementById("email-login").value = "";
+    document.getElementById("pass-login").value = "";
+    window.location.href = "dashboard.html"; // Admin redirected to dashboard
+  } else {
+    document.getElementById("email-login").value = "";
+    document.getElementById("pass-login").value = "";
+    window.location.href = "home.html"; // Normal user redirected to home
+  }
 });
