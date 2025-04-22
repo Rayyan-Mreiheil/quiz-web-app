@@ -53,3 +53,8 @@ h2 {
     font-size: 20px;
     cursor: pointer;
   }
+
+  button:hover {
+    color: red;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
