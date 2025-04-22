@@ -47,3 +47,8 @@ input {
   font-size: 16px;
   cursor: pointer;
 }
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+}
