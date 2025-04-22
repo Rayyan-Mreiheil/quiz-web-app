@@ -38,3 +38,12 @@ a:hover {
   text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
     1px 1px 0 black;
 }
+
+input {
+  border: none; /* remove all borders */
+  border-bottom: 3px solid blueviolet;
+  background: transparent;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
