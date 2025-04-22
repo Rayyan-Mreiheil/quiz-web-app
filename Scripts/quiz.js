@@ -198,3 +198,13 @@ if (selectedbtnQu === "htmlbtn") {
   const q3opt4 = document.getElementById("qu3option4");
   q3opt4.textContent = storedSqlQuestions[2].options[3];
 }
+
+// Function to mark the selected button
+function selectOption(button) {
+    // Remove previously selected buttons in the same question
+    const buttons = button.closest("section").querySelectorAll(".option");
+    buttons.forEach((btn) => btn.classList.remove("selected"));
+  
+    // Mark this button as selected
+    button.classList.add("selected");
+  }
