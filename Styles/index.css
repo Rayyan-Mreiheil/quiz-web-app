@@ -4,4 +4,10 @@
   padding: 0;
 }
 
-
+body {
+  background-image: url("../Images/indexImg.jpg");
+  background-size: cover; /* makes image cover the whole screen */
+  background-repeat: no-repeat;
+  background-position: top center;
+  text-align: center;
+}
