@@ -81,3 +81,11 @@ const htmlquestions = [
   ];
   // Store it in localStorage
   localStorage.setItem("sqlQuestions", JSON.stringify(sqlQuestions));
+
+  // find selected btn quiz
+const htmlbtn = document.getElementById("htmlbtn");
+const cssbtn = document.getElementById("cssbtn");
+const sqlbtn = document.getElementById("sqlbtn");
+
+let selectedbtnQu = localStorage.getItem("selectedbtnQu");
+// console.log(selectedbtnQu);
