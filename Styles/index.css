@@ -23,9 +23,18 @@ a:hover {
 }
 
 .index-container {
-    background-color: rgba(255, 255, 255, 0.6);
-    margin: 15% auto;
-    width: 40%;
-    border-radius: 100px;
-    padding: 50px;
-  }
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 15% auto;
+  width: 40%;
+  border-radius: 100px;
+  padding: 50px;
+}
+
+.index-container span {
+  color: blueviolet;
+  font-family: "Kaushan Script", cursive;
+  font-weight: 600;
+  font-style: normal;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
+    1px 1px 0 black;
+}
