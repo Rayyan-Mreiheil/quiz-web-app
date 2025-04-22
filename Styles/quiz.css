@@ -37,3 +37,9 @@
     border-top-right-radius: 50%;
     border-top: 10px double blueviolet;
   }
+
+  main {
+    border-radius: 100px;
+    padding: 40px;
+    margin: auto;
+  }
