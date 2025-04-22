@@ -18,3 +18,13 @@ const defaultAdmin = {
 };
 
 let users = JSON.parse(localStorage.getItem("users"));
+
+// Check if admin is already there
+if (!users.some((user) => user.email === defaultAdmin.email)) {
+    // Checks if any user in the users array has the same email as the defaultAdmin
+    users.push(defaultAdmin);
+    localStorage.setItem("users", JSON.stringify(users));
+  }
+  // ### Testing ###
+  // console.log(users);
+  // localStorage.clear();
