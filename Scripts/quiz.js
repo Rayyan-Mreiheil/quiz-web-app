@@ -91,112 +91,28 @@ let selectedbtnQu = localStorage.getItem("selectedbtnQu");
 
 const quContainer = document.getElementsByClassName("qu-container");
 
-if (selectedbtnQu === "htmlbtn") {
-  const storedHtmlQuestions = JSON.parse(localStorage.getItem("htmlQuestions"));
+function populateQuestions(selectedbtnQu) {
+  let storedQuestions;
+  if (selectedbtnQu === "htmlbtn") {
+    storedQuestions = JSON.parse(localStorage.getItem("htmlQuestions"));
+  } else if (selectedbtnQu === "cssbtn") {
+    storedQuestions = JSON.parse(localStorage.getItem("cssQuestions"));
+  } else {
+    storedQuestions = JSON.parse(localStorage.getItem("sqlQuestions"));
+  }
 
-  const qu1name = document.getElementById("qu1-name");
-  qu1name.textContent = storedHtmlQuestions[0].question;
-  const q1opt1 = document.getElementById("qu1option1");
-  q1opt1.textContent = storedHtmlQuestions[0].options[0];
-  const q1opt2 = document.getElementById("qu1option2");
-  q1opt2.textContent = storedHtmlQuestions[0].options[1];
-  const q1opt3 = document.getElementById("qu1option3");
-  q1opt3.textContent = storedHtmlQuestions[0].options[2];
-  const q1opt4 = document.getElementById("qu1option4");
-  q1opt4.textContent = storedHtmlQuestions[0].options[3];
+  // Loop through questions to populate the content dynamically
+  for (let i = 0; i < 3; i++) {
+    const quName = document.getElementById(`qu${i + 1}-name`);
+    quName.textContent = storedQuestions[i].question;
 
-  const qu2name = document.getElementById("qu2-name");
-  qu2name.textContent = storedHtmlQuestions[1].question;
-  const q2opt1 = document.getElementById("qu2option1");
-  q2opt1.textContent = storedHtmlQuestions[1].options[0];
-  const q2opt2 = document.getElementById("qu2option2");
-  q2opt2.textContent = storedHtmlQuestions[1].options[1];
-  const q2opt3 = document.getElementById("qu2option3");
-  q2opt3.textContent = storedHtmlQuestions[1].options[2];
-  const q2opt4 = document.getElementById("qu2option4");
-  q2opt4.textContent = storedHtmlQuestions[1].options[3];
-
-  const qu3name = document.getElementById("qu3-name");
-  qu3name.textContent = storedHtmlQuestions[2].question;
-  const q3opt1 = document.getElementById("qu3option1");
-  q3opt1.textContent = storedHtmlQuestions[2].options[0];
-  const q3opt2 = document.getElementById("qu3option2");
-  q3opt2.textContent = storedHtmlQuestions[2].options[1];
-  const q3opt3 = document.getElementById("qu3option3");
-  q3opt3.textContent = storedHtmlQuestions[2].options[2];
-  const q3opt4 = document.getElementById("qu3option4");
-  q3opt4.textContent = storedHtmlQuestions[2].options[3];
-} else if (selectedbtnQu === "cssbtn") {
-  const storedCssQuestions = JSON.parse(localStorage.getItem("cssQuestions"));
-
-  const qu1name = document.getElementById("qu1-name");
-  qu1name.textContent = storedCssQuestions[0].question;
-  const q1opt1 = document.getElementById("qu1option1");
-  q1opt1.textContent = storedCssQuestions[0].options[0];
-  const q1opt2 = document.getElementById("qu1option2");
-  q1opt2.textContent = storedCssQuestions[0].options[1];
-  const q1opt3 = document.getElementById("qu1option3");
-  q1opt3.textContent = storedCssQuestions[0].options[2];
-  const q1opt4 = document.getElementById("qu1option4");
-  q1opt4.textContent = storedCssQuestions[0].options[3];
-
-  const qu2name = document.getElementById("qu2-name");
-  qu2name.textContent = storedCssQuestions[1].question;
-  const q2opt1 = document.getElementById("qu2option1");
-  q2opt1.textContent = storedCssQuestions[1].options[0];
-  const q2opt2 = document.getElementById("qu2option2");
-  q2opt2.textContent = storedCssQuestions[1].options[1];
-  const q2opt3 = document.getElementById("qu2option3");
-  q2opt3.textContent = storedCssQuestions[1].options[2];
-  const q2opt4 = document.getElementById("qu2option4");
-  q2opt4.textContent = storedCssQuestions[1].options[3];
-
-  const qu3name = document.getElementById("qu3-name");
-  qu3name.textContent = storedCssQuestions[2].question;
-  const q3opt1 = document.getElementById("qu3option1");
-  q3opt1.textContent = storedCssQuestions[2].options[0];
-  const q3opt2 = document.getElementById("qu3option2");
-  q3opt2.textContent = storedCssQuestions[2].options[1];
-  const q3opt3 = document.getElementById("qu3option3");
-  q3opt3.textContent = storedCssQuestions[2].options[2];
-  const q3opt4 = document.getElementById("qu3option4");
-  q3opt4.textContent = storedCssQuestions[2].options[3];
-} else {
-  const storedSqlQuestions = JSON.parse(localStorage.getItem("sqlQuestions"));
-
-  const qu1name = document.getElementById("qu1-name");
-  qu1name.textContent = storedSqlQuestions[0].question;
-  const q1opt1 = document.getElementById("qu1option1");
-  q1opt1.textContent = storedSqlQuestions[0].options[0];
-  const q1opt2 = document.getElementById("qu1option2");
-  q1opt2.textContent = storedSqlQuestions[0].options[1];
-  const q1opt3 = document.getElementById("qu1option3");
-  q1opt3.textContent = storedSqlQuestions[0].options[2];
-  const q1opt4 = document.getElementById("qu1option4");
-  q1opt4.textContent = storedSqlQuestions[0].options[3];
-
-  const qu2name = document.getElementById("qu2-name");
-  qu2name.textContent = storedSqlQuestions[1].question;
-  const q2opt1 = document.getElementById("qu2option1");
-  q2opt1.textContent = storedSqlQuestions[1].options[0];
-  const q2opt2 = document.getElementById("qu2option2");
-  q2opt2.textContent = storedSqlQuestions[1].options[1];
-  const q2opt3 = document.getElementById("qu2option3");
-  q2opt3.textContent = storedSqlQuestions[1].options[2];
-  const q2opt4 = document.getElementById("qu2option4");
-  q2opt4.textContent = storedSqlQuestions[1].options[3];
-
-  const qu3name = document.getElementById("qu3-name");
-  qu3name.textContent = storedSqlQuestions[2].question;
-  const q3opt1 = document.getElementById("qu3option1");
-  q3opt1.textContent = storedSqlQuestions[2].options[0];
-  const q3opt2 = document.getElementById("qu3option2");
-  q3opt2.textContent = storedSqlQuestions[2].options[1];
-  const q3opt3 = document.getElementById("qu3option3");
-  q3opt3.textContent = storedSqlQuestions[2].options[2];
-  const q3opt4 = document.getElementById("qu3option4");
-  q3opt4.textContent = storedSqlQuestions[2].options[3];
+    for (let j = 0; j < 4; j++) {
+      const option = document.getElementById(`qu${i + 1}option${j + 1}`);
+      option.textContent = storedQuestions[i].options[j];
+    }
+  }
 }
+populateQuestions(selectedbtnQu);
 
 // Function to mark the selected button
 function selectOption(button) {
