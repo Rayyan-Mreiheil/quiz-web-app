@@ -78,6 +78,14 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+  color: green;
+  font-weight: 600;
+  font-style: normal;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+    1px 1px 0 white;
+}
+
 .form2-signup {
     /* visibility: hidden; */
     display: none;

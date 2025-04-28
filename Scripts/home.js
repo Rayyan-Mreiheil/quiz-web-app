@@ -16,3 +16,9 @@ Array.from(btnStart).forEach((button) => {
     window.location.href = "quiz.html";
   });
 });
+
+const logoutbtn = document.getElementById("logoutbtn");
+logoutbtn.addEventListener("click", function (event){
+  // Redirect to quiz page
+  window.location.href = "index.html";
+});

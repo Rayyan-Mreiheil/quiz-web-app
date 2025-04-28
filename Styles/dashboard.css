@@ -50,6 +50,20 @@ table {
     font-size: 20px;
   }
 
+  button {
+    margin-top: 30px;
+    padding: 5px 30px;
+    border: 5px double white;
+    border-radius: 20px;
+    background-color: blueviolet;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  button:hover {
+    color: red;
+    text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
   
 /* ################################   Make Responsive Web Design-Media Queries   ################################*/
 
